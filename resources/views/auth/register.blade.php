@@ -19,11 +19,46 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
+            <!-- firstName -->
+            <div>
+                <x-label for="firstName" :value="__('Prénom')" />
+
+                <x-input id="name" class="block mt-1 w-full" type="text" name="firstNameUser" :value="old('Prénom')" required autofocus />
+            </div>
+
+            <!-- lastName -->
+            <div>
+                <x-label for="lastName" :value="__('Nom')" />
+
+                <x-input id="name" class="block mt-1 w-full" type="text" name="lastNameUser" :value="old('Nom')" required autofocus />
+            </div>
+
             <!-- Email Address -->
             <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+                <x-label for="email" :value="__('Adresse mail')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+             <!-- adress -->
+             <div>
+                <x-label for="name" :value="__('Adresse')" />
+
+                <x-input id="name" class="block mt-1 w-full" type="text" name="street" :value="old('Adresse')" required autofocus />
+            </div>
+
+            <!-- postal code -->
+            <div>
+                <x-label for="name" :value="__('Code Postal')" />
+
+                <x-input id="name" class="block mt-1 w-full" type="text" name="postalCode" :value="old('Code Postal')" required autofocus />
+            </div>
+
+            <!-- postal code -->
+            <div>
+                <x-label for="name" :value="__('Ville')" />
+
+                <x-input id="name" class="block mt-1 w-full" type="text" name="city" :value="old('Ville')" required autofocus />
             </div>
 
             <!-- Password -->
