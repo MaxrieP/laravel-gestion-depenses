@@ -1,3 +1,8 @@
+##Projet
+Ce projet a pour but de créer une application web fictive permettant à un artisan de regrouper et organiser son système
+de comptabilité et de facturation.
+
+Développé par Jonathan Lescaut et Marie Préault - école ArInfo
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
