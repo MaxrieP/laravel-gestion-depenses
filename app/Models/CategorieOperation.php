@@ -12,6 +12,6 @@ class CategorieOperation extends Model
 
     public function Operation()
     {
-        return $this->belongsTo(Operation::class, 'id');
+        return $this->belongsTo(Operation::class, 'idOperation');
     }
 }

@@ -13,4 +13,8 @@ class Operation extends Model
     public function CategorieOperations() {
         return $this->hasOne(CategorieOperation::class);
     }
+
+    public function Client() {
+        return $this->hasOne(Client::class);
+    }
 }

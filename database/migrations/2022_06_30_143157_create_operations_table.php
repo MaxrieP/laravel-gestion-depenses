@@ -14,9 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('operations', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('idOperation');
             $table->decimal('montantOperation', 12,2);
             $table->string('typeOperation');
+            $table->foreign('idCategorie')->references('idCategorie')->on('CategorieOperations');
             $table->timestamps();
         });
     }
