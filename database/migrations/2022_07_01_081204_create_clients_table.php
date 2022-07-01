@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('operations', function (Blueprint $table) {
-            $table->increments('idOperation');
-            $table->decimal('montantOperation', 12,2);
-            $table->string('typeOperation');
-            $table->integer('idCategorie');
+        Schema::create('clients', function (Blueprint $table) {
+            $table->increments('idClient');
+            $table->string('nomClient');
             $table->timestamps();
+        });
+
+        Schema::table('operations', function(Blueprint $table) {
+            $table->foreign('idClient')->references('id')->on('operations');
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('operations');
+        Schema::dropIfExists('clients');
     }
 };
