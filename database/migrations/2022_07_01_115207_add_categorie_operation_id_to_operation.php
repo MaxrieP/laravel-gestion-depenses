@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('operations', function (Blueprint $table) {
-            $table->increments('idOperation');
-            $table->decimal('montantOperation', 12,2);
-            $table->string('typeOperation');
-            $table->timestamps();
+        Schema::table('operations', function (Blueprint $table) {
+            $table->bigInteger('categorieOperation_id')->unsigned();
+            $table->foreign('categorieOperation_id')
+                ->references('id')
+                ->on('categorieOperation');
         });
     }
 
@@ -28,6 +28,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('operations');
+        Schema::table('operations', function (Blueprint $table) {
+            $table->dropColumn('categorieOperation_id');
+        });
     }
 };
