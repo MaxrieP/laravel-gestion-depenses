@@ -20,11 +20,11 @@
                                 @foreach($operation as $operations)
 
                                 <tr>
-                                    <td>{{$operation->nomOperation}}</td>
-                                    <td>{{$operation->montantOperation}}</td>
+                                    <td>{{$operations->nomOperation}}</td>
+                                    <td>{{$operations->montantOperation}}</td>
                                     <td>
-                                        <a href="{{route('operation.edit', $operation->id)}}" class="btn btn-primary btn-sm">Editer</a>
-                                        <form action="{{ route('operation.destroy', $operation->id)}}" method="POST" style="display: inline-block">
+                                        <a href="{{route('operations.edit', $operations->id)}}" class="btn btn-primary btn-sm">Editer</a>
+                                        <form action="{{ route('operations.destroy', $operations->id)}}" method="POST" style="display: inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-sm" type=" submit">Supprimer</button>
