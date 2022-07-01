@@ -14,13 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('categorie_operations', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('idCategorieOperation');
             $table->string('nomCategorieOperation');
             $table->timestamps();
-        });
-
-        Schema::table('operations', function(Blueprint $table) {
-           $table->foreign('id')->references('id');
         });
     }
 

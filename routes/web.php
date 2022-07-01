@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OperationController;
+use App\Http\Controllers\CategorieOperationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('operations', OperationController::class);
+Route::resource('categorie_operations', CategorieOperationController::class);
 require __DIR__.'/auth.php';
