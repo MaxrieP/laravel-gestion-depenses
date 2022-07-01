@@ -17,7 +17,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($operation as $operations)
+                                @foreach($operations as $operations)
 
                                 <tr>
                                     <td>{{$operations->nomOperation}}</td>
@@ -42,6 +42,6 @@
         </div>
     </div>
     <div class="row">
-        <a href="{{route('operation.create')}}" class="btn btn-secondary">Générer une opération</a>
+        <a href="{{route('operations.create')}}" class="btn btn-secondary">Générer une opération</a>
     </div>
     @endsection

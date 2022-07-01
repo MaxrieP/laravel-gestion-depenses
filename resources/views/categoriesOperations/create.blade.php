@@ -18,7 +18,7 @@
                         </div>
                         @endif
                         <!-- Formulaire -->
-                        <form method="POST" action="{{route('categorieOperation.store')}}">
+                        <form method="POST" action="{{route('categorie_operations.store')}}">
                             @csrf
                             <div class="form-group">
                                 <label>Nom catégorie d'opération</label>

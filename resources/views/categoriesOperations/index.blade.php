@@ -16,13 +16,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($categorieOperation as $categorieOperations)
+                                @foreach($categorieOperations as $categoriesOperations)
 
                                 <tr>
-                                    <td>{{$operation->nomCategorieOperation}}</td>
+                                    <td>{{$categoriesOperations->nomCategorieOperation}}</td>
                                     <td>
-                                        <a href="{{route('operation.edit', $operation->id)}}" class="btn btn-primary btn-sm">Editer</a>
-                                        <form action="{{ route('operation.destroy', $operation->id)}}" method="POST" style="display: inline-block">
+                                        <a href="{{route('categorie_operations.edit', $categoriesOperations->idCategorieOperation)}}" class="btn btn-primary btn-sm">Editer</a>
+                                        <form action="{{ route('categorie_operations.destroy', $categoriesOperations->idCategorieOperation)}}" method="POST" style="display: inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-sm" type=" submit">Supprimer</button>
@@ -40,6 +40,6 @@
         </div>
     </div>
     <div class="row">
-        <a href="{{route('operation.create')}}" class="btn btn-secondary">Générer une opération</a>
+        <a href="{{route('categorie_operations.create')}}" class="btn btn-secondary">Générer une opération</a>
     </div>
     @endsection

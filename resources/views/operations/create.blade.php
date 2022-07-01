@@ -18,7 +18,7 @@
                         </div>
                         @endif
                         <!-- Formulaire -->
-                        <form method="POST" action="{{route('operation.store')}}">
+                        <form method="POST" action="{{route('operations.store')}}">
                             @csrf
                             <div class="form-group">
                                 <label>Type</label>
@@ -31,8 +31,8 @@
                             <div class="form-group">
                                 <select name="categorieOperation_id" class="custom-select">
                                     <option value=""> --Catégories-- </option>
-                                    @foreach($categorieOperation as $categorieOperation)
-                                    <option value="{{ $categorieOperation->id }}">{{ $categorieOperation->nomCategorieOperation }}</option>
+                                    @foreach($categorieOperations as $categorieOperation)
+                                    <option value="{{ $categorieOperation->idCategorieOperation }}">{{ $categorieOperation->nomCategorieOperation }}</option>
                                     @endforeach
                                 </select>
                             </div>

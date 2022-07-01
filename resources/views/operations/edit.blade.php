@@ -18,21 +18,21 @@
                         </div>
                         @endif
                         <!-- Formulaire -->
-                        <form method="POST" action="{{route('operation.update', $operation->id)}}">
+                        <form method="POST" action="{{route('operations.update', $operations->id)}}">
                             @csrf
                             <div class="form-group">
                                 <label>Type</label>
-                                <input type="text" name="typeOperation" class="form-control" value="{{ $operation->typeOperation}}">
+                                <input type="text" name="typeOperation" class="form-control" value="{{ $operations->typeOperation}}">
                             </div>
                             <div class="form-group">
                                 <label>Montant</label>
-                                <input type="number" name="montantOperation" class="form-control" value="{{ $operation->montantOperation}}">
+                                <input type="number" name="montantOperation" class="form-control" value="{{ $operations->montantOperation}}">
                             </div>
                             <div class="form-group">
                                 <select name="categorieOperation_id" class="custom-select">
-                                    <option value="{{ $operation->categoriesOperation_id}}">{{ $operation->categorieOperation->nomCategorieOperation }}</option>
-                                    @foreach($categorieOperation as $categorieOperation)
-                                    <option value="{{ $categorieOperation->id }}">{{ $categorieOperation->nomCategorieOperation }}</option>
+                                    <option value="{{ $operations->categoriesOperation_id}}">{{ $operations->categorieOperation->nomCategorieOperation }}</option>
+                                    @foreach($categorieOperations as $categorieOperations)
+                                    <option value="{{ $categorieOperations->id }}">{{ $categorieOperations->nomCategorieOperations }}</option>
                                     @endforeach
                                 </select>
                             </div>
