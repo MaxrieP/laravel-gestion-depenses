@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CategorieOperation;
 
 class CategorieOperationController extends Controller
 {
@@ -13,7 +14,8 @@ class CategorieOperationController extends Controller
      */
     public function index()
     {
-        //
+        $categorieOperations = CategorieOperation::all();
+        return view('categoriesOperations.index', compact('categorieOperations'));
     }
 
     /**
@@ -23,7 +25,7 @@ class CategorieOperationController extends Controller
      */
     public function create()
     {
-        //
+        return view('categoriesOperations.create');
     }
 
     /**
@@ -34,7 +36,19 @@ class CategorieOperationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'nomCategorieOperation'=>'required',
+
+        ]);
+
+        CategorieOperation::create([
+            'nomCategorieOperation'=>  $request->nomCategorieOperation,
+
+        ]);
+
+        return redirect()->route('categoriesOperations.index')
+                        ->with('success', 'Catégorie ajouté avec succès !');
     }
 
     /**
@@ -56,7 +70,8 @@ class CategorieOperationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categorieOperations = CategorieOperation::findOrFail($id);
+        return view('categorieOperations.edit', compact('categorieOperations'));
     }
 
     /**
@@ -68,7 +83,13 @@ class CategorieOperationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updateCategoriesOperations = $request->validate([
+            'nomCategorieOperation'=>'required',
+
+        ]);
+        CategorieOperation::whereId($id)->update($updateCategoriesOperations);
+        return redirect()->route('categorie_operations.index')
+            ->with('success', 'la catégorie a été mis à jour avec succès !');
     }
 
     /**
@@ -79,6 +100,8 @@ class CategorieOperationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categorieOperations = CategorieOperation::findOrFail($id);
+        $categorieOperations->delete();
+        return redirect('/categorieOperations')->with('success', 'Catégorie supprimée avec succès');
     }
 }
